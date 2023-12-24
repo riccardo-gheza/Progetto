@@ -80,8 +80,10 @@
         }
 
         p{
-            margin-top: 260px;
-            margin-bottom: -100px;
+            font-size: 16px; /* Dimensione del carattere di base */
+            line-height: 1.5; /* Altezza della riga di base */
+            max-width: 100%; /* Larghezza massima del paragrafo */
+            margin: 10px 0; /* Margine superiore e inferiore */
             color: black;
             font-weight: bold;
         }
@@ -93,6 +95,13 @@
         .spostato_2 {
             margin-left: 300px; 
         }
+
+        /* Stile specifico per dispositivi di larghezza inferiore a 600px (es. dispositivi mobili) */
+        @media (max-width: 600px) {
+        p {
+        font-size: 14px; /* Riduci la dimensione del carattere per dispositivi più piccoli */
+        }
+}
     </style>
 </head>
 <body>
