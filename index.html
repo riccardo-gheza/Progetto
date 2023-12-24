@@ -79,19 +79,16 @@
             background-color: lightblue;
         }
 
-        p{
-            margin-top: 260px;
-            margin-bottom: -100px;
-            color: black;
-            font-weight: bold;
+        @media only screen and (max-width: 600px) {
+        p {
+        margin-top: 20px; /* Modifica la distanza superiore per adattarla meglio su schermi più piccoli */
+        margin-bottom: -50px; /* Modifica la distanza inferiore per adattarla meglio su schermi più piccoli */
+        font-size: 14px; /* Modifica la dimensione del testo per adattarla meglio su schermi più piccoli */
         }
 
-        .spostato  {
-            margin-left: 290px; 
+    .spostato, .spostato_2 {
+        margin-left: 0; /* Resetta la margin-left per adattarla meglio su schermi più piccoli */
         }
-
-        .spostato_2 {
-            margin-left: 300px; 
         }
     </style>
 </head>
