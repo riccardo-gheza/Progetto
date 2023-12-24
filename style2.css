@@ -90,6 +90,7 @@ body {
     .wrapper {
         width: auto;
         height: auto; 
+        overflow: auto;
     }
 
     .game-details {
@@ -139,3 +140,13 @@ button:focus {
 }
 
 
+
+
+
+.play-board {
+    border: 2px solid red; /* Aggiungi un bordo rosso al campo di gioco */
+}
+
+.play-board .head {
+    border: 2px solid green; /* Aggiungi un bordo verde alla testa di Snake */
+}
