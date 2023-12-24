@@ -29,22 +29,21 @@ body {
 }
 
 .play-board {
-    height: 100%;    
+    height: calc(100% - 40px);    
     width: 100%;
     display: grid;
-    overflow: auto;
     background: #212837;
-    grid-template-columns: repeat(30, 1fr);  /* Utilizza unità frazionarie per le colonne */
-    grid-template-rows: repeat(30, 1fr);    
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
     position: relative;
 }
 
 
 .buttons-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
     bottom: 0;
     width: 100%;
 }
@@ -89,8 +88,8 @@ body {
 
 @media screen and (max-width: 768px) {
     .wrapper {
-        width: 90vmin;
-        height: auto; /* Imposta l'altezza su automatico per adattarsi al contenuto */
+        width: auto;
+        height: auto; 
     }
 
     .game-details {
@@ -98,10 +97,6 @@ body {
         padding: 15px 27px;
     }
 
-    .buttons-container {
-        flex-direction: column; /* Modificato da row a column per adattarsi a schermi più piccoli */
-    }
-    
     .controls {
         display: flex;
         flex-wrap: wrap; /* Consente ai controlli di avvolgersi su schermi più piccoli */
@@ -112,11 +107,6 @@ body {
         font-size: 1rem;
         width: 50%; /* Imposta la larghezza al 50% per adattarsi su schermi più piccoli */
         border-bottom: 1px solid #171b26; /* Aggiunge una linea inferiore tra i controlli */
-    }
-
-    .play-board {
-        grid-template-columns: repeat(15, 1fr);  /* Riduci il numero di colonne su schermi più piccoli */
-        grid-template-rows: repeat(15, 1fr);      /* Riduci il numero di righe su schermi più piccoli */
     }
 }
 
