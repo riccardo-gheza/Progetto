@@ -11,7 +11,7 @@ body {
     width: 65vmin;
     height: 70vmin;
     display: flex;
-    overflow: hidden;
+    overflow: auto;
     flex-direction: column;
     justify-content: center;
     background: #293447;
@@ -87,6 +87,14 @@ body {
     margin-left: 100px;
     margin-top: 20px; 
 }
+
+#menu-principale,
+#reset-high-score,
+#regole2 {
+    margin: 20px 0;
+    z-index: 1; /* Imposta un valore più alto per il livello z dei bottoni */
+}
+
 
 button {
     background: lightyellow;
