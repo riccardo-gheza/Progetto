@@ -5,6 +5,37 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentScore = 0;
     const currentScoreElem = document.getElementById('current-score');
 
+    let touchStartX, touchStartY, touchEndX, touchEndY;
+    const minSwipeDistance = 50; // Minimum distance for a swipe gesture
+
+    document.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    });
+
+    document.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        touchEndY = e.changedTouches[0].clientY;
+
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            // Horizontal swipe
+            if (deltaX > minSwipeDistance) {
+                move('ArrowRight');
+            } else if (deltaX < -minSwipeDistance) {
+                move('ArrowLeft');
+            }
+        } else {
+            // Vertical swipe
+            if (deltaY > minSwipeDistance) {
+                move('ArrowDown');
+            } else if (deltaY < -minSwipeDistance) {
+                move('ArrowUp');
+            }
+        }
+    });
     let highScore = localStorage.getItem('2048-highScore') || 0;
     const highScoreElem = document.getElementById('high-score');
     highScoreElem.textContent = highScore;
