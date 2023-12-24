@@ -14,6 +14,12 @@ app.post('/saveScore', (req, res) => {
     res.status(200).send('Punteggio salvato con successo');
 });
 
+// Configura il tipo MIME per i moduli JavaScript
+app.get('/script.js', (req, res) => {
+    res.type('application/javascript');
+    res.sendFile('script.js', { root: '.' });
+  });
+
 app.listen(port, () => {
     console.log(`Il server è in ascolto sulla porta ${port}`);
 });

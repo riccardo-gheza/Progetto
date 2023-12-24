@@ -62,7 +62,7 @@ function viewScores() {
     var modal = document.getElementById("modal");
     var modalContent = document.getElementById("modal-content");
 
-    // Pulisco il contenuto della finestra modale
+    // Pulisci il contenuto della finestra modale
     while (modalContent.firstChild) {
         modalContent.removeChild(modalContent.firstChild);
     }
@@ -70,17 +70,17 @@ function viewScores() {
     var transaction = db.transaction(["scores"], "readonly");
     var objectStore = transaction.objectStore("scores");
 
-    var request = objectStore.openCursor(null, 'prev');  
+    var request = objectStore.openCursor(null, 'prev');  // 'prev' imposta l'ordine in modo decrescente
 
     request.onsuccess = function (event) {
         var cursor = event.target.result;
         if (cursor) {
-            // Mostro solo l'ultima partita
+            // Mostra solo l'ultima partita
             var scoreInfo = document.createElement("p");
             scoreInfo.innerText = "Giocatore 1: " + cursor.value.player1 + ", Giocatore 2: " + cursor.value.player2 + ", Punteggio: " + cursor.value.score;
             modalContent.appendChild(scoreInfo);
-            modal.style.display = "block"; // Mostro la finestra modale
-            return;  // Esco dalla funzione dopo aver visualizzato l'ultima partita
+            modal.style.display = "block"; // Mostra la finestra modale
+            return;  // Esci dalla funzione dopo aver visualizzato l'ultima partita
         } else {
             console.log("Nessun punteggio nel database.");
         }
@@ -96,12 +96,12 @@ function closeModal() {
     var modal = document.getElementById("modal");
     var modalContent = document.getElementById("modal-content");
 
-    // Pulisco il contenuto della finestra modale
+    // Pulisci il contenuto della finestra modale
     while (modalContent.firstChild) {
         modalContent.removeChild(modalContent.firstChild);
     }
 
-    // Chiudo la finestra modale
+    // Chiudi la finestra modale
     modal.style.display = "none";
 }
 
@@ -203,7 +203,7 @@ function updateScoreDisplay() {
 function gameOver(a) {
     var winner = span[a].dataset.player.toUpperCase();
     var winningPlayerName = winner === "X" ? player1Name : player2Name;
-    var gameOverAlertElement = "<b>GAME OVER </b><br><br> Giocatore " + winningPlayerName + ' ha vinto! <br><br>' + restartButton;
+    var gameOverAlertElement = "<b>GAME OVER </b><br><br> Giocatore " + winningPlayerName + ' ha vinto ! <br><br>' + restartButton;
     var div = document.createElement("div");
     div.className = "alert";
     div.innerHTML = gameOverAlertElement;

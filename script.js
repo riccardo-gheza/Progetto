@@ -1,17 +1,17 @@
 // Importo il contenuto dei file JavaScript
-import Script1 from 'JAVASCRIPT/script1.js';
-import Script2 from 'JAVASCRIPT/script2.js';
-import Script3 from 'JAVASCRIPT/script3.js';
-import Script4 from 'JAVASCRIPT/script4.js';
+import Script1 from '/JAVASCRIPT/script1.js';
+import Script2 from '/JAVASCRIPT/script2.js';
+import Script3 from '/JAVASCRIPT/script3.js';
+import Script4 from '/JAVASCRIPT/script4.js';
 
 // Importo il contenuto dei file HTML
-import Index1 from 'HTML/index1.html';
-import Index2 from 'HTML/index2.html';
-import Index3 from 'HTML/index3.html';
-import Index4 from 'HTML/index4.html';
+import Index1 from '/HTML/index1.html';
+import Index2 from '/HTML/index2.html';
+import Index3 from '/HTML/index3.html';
+import Index4 from '/HTML/index4.html';
 
 // Importo il contenuto del menu
-import Menu from 'HTML/index.html';
+import Menu from '/HTML/index.html';
 
 // Configuro le rotte
 const routes = [
