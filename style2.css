@@ -29,11 +29,12 @@ body {
 }
 
 .play-board {
-    height: calc(100% - 40px);    
+    height: 100%;    
     width: 100%;
     display: grid;
     background: #212837;
-    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    grid-template-columns: repeat(30, 1fr);  /* Utilizza unità frazionarie per le colonne */
+    grid-template-rows: repeat(30, 1fr);    
     position: relative;
 }
 
