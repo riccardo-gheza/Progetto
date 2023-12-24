@@ -47,14 +47,23 @@ body {
 .controls {
     display: none;
     justify-content: space-between;
+    position: fixed; /* Imposta la posizione fissa */
+    bottom: 10px; /* Distanza dal basso */
+    left: 50%; /* Allinea al centro orizzontalmente */
+    transform: translateX(-50%); /* Corregge l'allineamento al centro */
+    width: 80%; /* Larghezza massima del 80% */
+    max-width: 300px; /* Larghezza massima di 300px */
+    background-color: #293447;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(52, 87, 220, 0.2);
 }
 
 .controls i {
-    padding: 25px 0;
+    padding: 15px 0;
     text-align: center;
     font-size: 1.3rem;
     color: #b8c6dc;
-    width: calc(100% / 4);
+    width: 25%; /* Larghezza del 25% del contenitore */
     cursor: pointer;
     border-right: 1px solid #171b26;
 }
