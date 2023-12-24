@@ -1,21 +1,21 @@
-body{
+body {
     background: lightblue;
     color: blue;
     font-family: serif;
     text-align: center;
 }
 
-h1{
+h1 {
     font-size: 2rem;
 }
 
-#container{
+#container {
     margin: 5% auto;
     border-radius: 5px;
     text-align: center;
 }
 
-.box{
+.box {
     display: inline-block;
     border: 1px solid blue;
     width: 100px;
@@ -25,7 +25,7 @@ h1{
     padding: 0;
 }
 
-span{
+span {
     position: absolute;
     font-size: 75px;
     font-family: sans-serif;
@@ -37,23 +37,11 @@ span{
     margin-left: -35px;
 }
 
-.top{
-    border-top: none;
+.top, .bottom, .left, .right {
+    border: 1px solid blue; /* Ripristina i bordi su tutti i lati */
 }
 
-.bottom{
-    border-bottom: none;
-}
-
-.left{
-    border-left: none;
-}
-
-.right{
-    border-right: none;
-}
-
-.alert{
+.alert {
     height: 75px;
     width: 125px;
     display: inline-block;
@@ -82,55 +70,42 @@ button {
     color: black;
 }
 
-button:focus{
+button:focus {
     background: silver;
 }
 
-.activeBox{
+.activeBox {
     background: silver;
 }
 
-@keyframes larger{
-    from{
+@keyframes larger {
+    from {
         height: 75px;
         width: 125px;
     }
 
-    to{
+    to {
         height: 100px;
         width: 250px;
     }
-
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+/* Media query per schermi di larghezza massima 600px (stile per dispositivi mobili) */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    #container {
+        margin: 10% auto;
+    }
+
+    .box, .alert {
+        width: 80%; /* Adatta la larghezza per schermi più piccoli */
+    }
+
+    span {
+        font-size: 50px;
+        margin-left: -25px;
+    }
 }
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: black;
-}
-
-
