@@ -62,7 +62,7 @@ body {
 @media screen and (max-width: 800px) {
     .wrapper {
         width: 90vmin;
-        height: 115vmin;
+        height: auto; /* Imposta l'altezza su automatico per adattarsi al contenuto */
     }
 
     .game-details {
@@ -72,11 +72,14 @@ body {
 
     .controls {
         display: flex;
+        flex-wrap: wrap; /* Consente ai controlli di avvolgersi su schermi più piccoli */
     }
 
     .controls i {
         padding: 15px 0;
         font-size: 1rem;
+        width: 50%; /* Imposta la larghezza al 50% per adattarsi su schermi più piccoli */
+        border-bottom: 1px solid #171b26; /* Aggiunge una linea inferiore tra i controlli */
     }
 }
 
@@ -99,19 +102,8 @@ button:focus {
     background: silver;
 }
 
-#menu-principale {
-    margin-top: 750px; /* Regolo la distanza dal bordo superiore */
-    margin-right: 25px;
-    margin-left: -590px;
-}
-
-#reset-high-score {
-    margin-left: -200px;
-    margin-bottom: -690px;
-    margin-top: 56px;
-}
-
+#menu-principale,
+#reset-high-score,
 #regole2 {
-    margin-top: 750px;
-    margin-left: -350px;
+    margin: 20px 0; /* Aggiungi spaziatura generale su schermi più piccoli */
 }
