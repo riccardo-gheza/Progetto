@@ -42,7 +42,7 @@ body {
 
 .buttons-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -99,6 +99,10 @@ body {
         padding: 15px 27px;
     }
 
+    .buttons-container {
+        flex-direction: column; /* Modificato da row a column per adattarsi a schermi più piccoli */
+    }
+    
     .controls {
         display: flex;
         flex-wrap: wrap; /* Consente ai controlli di avvolgersi su schermi più piccoli */
