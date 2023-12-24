@@ -92,6 +92,17 @@ body {
         height: auto; 
     }
 
+    .play-board {
+        touch-action: pan-x pan-y; /* Abilita la gestione del tocco per la griglia del gioco */
+        overflow: hidden; /* Nasconde l'overflow per evitare lo scrolling della pagina */
+    }
+
+    .buttons-container {
+        position: static; /* Rimuovi il posizionamento assoluto per i bottoni su schermi più piccoli */
+        margin-top: 10px; /* Aggiunto il margine superiore per spaziare i bottoni dal contenuto sopra */
+        display: none; /* Nascondi i bottoni su schermi più piccoli, poiché utilizzeremo il tocco per il movimento */
+    }
+    
     .game-details {
         font-size: 1rem;
         padding: 15px 27px;

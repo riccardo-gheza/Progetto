@@ -11,6 +11,34 @@
     <title>SNAKE GAME</title>
 </head>
 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var direction = 'right'; // direzione di default
+
+        function handleSwipe(direction) {
+            // Aggiorna la direzione del serpente in base allo swipe
+            // Implementa la tua logica per il movimento del serpente qui
+        }
+
+        $('.play-board').on('swipe', function (event) {
+            // Calcola la direzione dello swipe
+            var deltaX = event.deltaX;
+            var deltaY = event.deltaY;
+
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                // Spostamento orizzontale
+                direction = (deltaX > 0) ? 'right' : 'left';
+            } else {
+                // Spostamento verticale
+                direction = (deltaY > 0) ? 'down' : 'up';
+            }
+
+            handleSwipe(direction);
+        });
+    });
+</script>
+
 <body>
 
     <div class="wrapper">
