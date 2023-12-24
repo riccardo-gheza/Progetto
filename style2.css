@@ -29,12 +29,40 @@ body {
 }
 
 .play-board {
-    height: 100%;
+    height: calc(100% - 40px);    
     width: 100%;
     display: grid;
     background: #212837;
     grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    position: relative;
 }
+
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.buttons-container button {
+    margin: 5px;
+    background: lightyellow;
+    border-radius: 10px;
+    border: 2px solid blue;
+    outline: none;
+    padding: 6px;
+    font-weight: bold;
+    color: black;
+}
+
+.buttons-container button:focus {
+    background: silver;
+}
+
 
 .play-board .food {
     background: #ff003d;
@@ -94,9 +122,10 @@ button {
     padding: 6px;
     font-weight: bold;
     color: black;
-    margin-top: 0;
 }
 
 button:focus {
     background: silver;
 }
+
+
