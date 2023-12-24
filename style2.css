@@ -46,7 +46,6 @@ body {
 
 .controls {
     display: none;
-    justify-content: space-between;
 }
 
 .controls i {
@@ -85,16 +84,7 @@ body {
 
 .move-right {
     margin-left: 100px;
-    margin-top: 20px; 
 }
-
-#menu-principale,
-#reset-high-score,
-#regole2 {
-    margin: 20px 0;
-    z-index: 1; /* Imposta un valore più alto per il livello z dei bottoni */
-}
-
 
 button {
     background: lightyellow;
@@ -104,14 +94,9 @@ button {
     padding: 6px;
     font-weight: bold;
     color: black;
+    margin-top: 0;
 }
 
 button:focus {
     background: silver;
-}
-
-#menu-principale,
-#reset-high-score,
-#regole2 {
-    margin: 20px 0; /* Aggiungi spaziatura generale su schermi più piccoli */
 }

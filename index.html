@@ -79,15 +79,20 @@
             background-color: lightblue;
         }
 
+        p{
+            font-weight: bold;
+        }
+
+        .spostato{
+            margin-left: 200px;
+        }
+
         @media only screen and (max-width: 600px) {
-        p {
+        p, .spostato {
         margin-top: 20px; /* Modifica la distanza superiore per adattarla meglio su schermi più piccoli */
         margin-bottom: -50px; /* Modifica la distanza inferiore per adattarla meglio su schermi più piccoli */
         font-size: 14px; /* Modifica la dimensione del testo per adattarla meglio su schermi più piccoli */
-        }
-
-    .spostato, .spostato_2 {
-        margin-left: 0; /* Resetta la margin-left per adattarla meglio su schermi più piccoli */
+        font-weight: bold;
         }
         }
     </style>
@@ -106,8 +111,8 @@
   <script type="module" src="script.js"></script>
 </body>
 
-<p>Sito sviluppato da Riccardo Gheza come progetto per l'esame orale del corso di Programmazione Web e Mobile<br><span class="spostato">a cura del Professor Paolo Ceravolo<br><br>
-    <span class="spostato_2">Università degli Studi di Milano</span></p>
+<p>Sito sviluppato da Riccardo Gheza come progetto per l'esame orale del corso di Programmazione Web e Mobile<br><span class ="spostato"> a cura del Professor Paolo Ceravolo - 
+    Università degli Studi di Milano</span></p>
 </html>
 
 
