@@ -139,14 +139,3 @@ button:focus {
     background: silver;
 }
 
-
-
-
-
-.play-board {
-    border: 2px solid red; /* Aggiungi un bordo rosso al campo di gioco */
-}
-
-.play-board .head {
-    border: 2px solid green; /* Aggiungi un bordo verde alla testa di Snake */
-}
