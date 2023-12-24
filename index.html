@@ -80,20 +80,19 @@
         }
 
         p{
-            font-size: 16px; /* Dimensione del carattere di base */
-            line-height: 1.5; /* Altezza della riga di base */
-            max-width: 100%; /* Larghezza massima del paragrafo */
-            margin: 10px 0; /* Margine superiore e inferiore */
+            margin-top: 260px;
+            margin-bottom: -100px;
             color: black;
             font-weight: bold;
         }
 
-        /* Stile specifico per dispositivi di larghezza inferiore a 600px (es. dispositivi mobili) */
-        @media (max-width: 600px) {
-        p {
-        font-size: 14px; /* Riduci la dimensione del carattere per dispositivi più piccoli */
+        .spostato  {
+            margin-left: 290px; 
         }
-}
+
+        .spostato_2 {
+            margin-left: 300px; 
+        }
     </style>
 </head>
 <body>
@@ -110,9 +109,8 @@
   <script type="module" src="script.js"></script>
 </body>
 
-<p>Sito sviluppato da Riccardo Gheza come progetto per l'esame orale del corso di Programmazione Web e Mobile<br>a cura del Professor Paolo Ceravolo<br><br>
-    Università degli Studi di Milano
-</p>
+<p>Sito sviluppato da Riccardo Gheza come progetto per l'esame orale del corso di Programmazione Web e Mobile<br><span class="spostato">a cura del Professor Paolo Ceravolo<br><br>
+    <span class="spostato_2">Università degli Studi di Milano</span></p>
 </html>
 
 
