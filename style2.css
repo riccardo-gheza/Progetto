@@ -113,7 +113,7 @@ body {
 
     /* Aggiungi una regola per la griglia di gioco su dispositivi mobili */
     .play-board {
-        grid-template: repeat(4, 1fr) / repeat(4, 1fr); /* Riduci il numero di celle sulla griglia */
+        grid-template: repeat(10, 1fr) / repeat(10, 1fr); /* Riduci il numero di celle sulla griglia */
         height: auto; /* Imposta l'altezza automatica */
     }
 
