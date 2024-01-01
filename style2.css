@@ -89,36 +89,37 @@ body {
 
 @media screen and (max-width: 768px) {
     .wrapper {
-        width: auto;
-        height: auto; 
+        width: 100%;
+        height: auto;
         overflow: auto;
     }
 
     .game-details {
-        font-size: 0.5rem;
-        padding: 10px 20px;
+        font-size: 0.8rem; /* Modifica la dimensione del testo per una migliore leggibilità */
+        padding: 10px;
     }
 
     .controls {
-        display: flex;
-        flex-wrap: wrap; /* Consente ai controlli di avvolgersi su schermi più piccoli */
+        flex-direction: column; /* Cambia la direzione del flessione per una visualizzazione migliore su dispositivi mobili */
+        align-items: center; /* Centra i controlli */
     }
 
     .controls i {
-        padding: 5px 0;
-        font-size: 1rem;
-        width: 20%; /* Imposta la larghezza al 50% per adattarsi su schermi più piccoli */
-        border-bottom: 1px solid #171b26; /* Aggiunge una linea inferiore tra i controlli */
+        padding: 10px;
+        font-size: 1.5rem; /* Aumenta la dimensione del testo per una migliore interazione su dispositivi mobili */
+        width: auto; /* Imposta la larghezza automatica per adattarsi al contenuto */
+        border-bottom: 1px solid #171b26;
     }
 
-    /* Riduci la dimensione della griglia di gioco per adattarsi a schermi più piccoli */
+    /* Aggiungi una regola per la griglia di gioco su dispositivi mobili */
     .play-board {
-        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+        grid-template: repeat(4, 1fr) / repeat(4, 1fr); /* Riduci il numero di celle sulla griglia */
+        height: auto; /* Imposta l'altezza automatica */
     }
 
-    /* Riduci le dimensioni dei bottoni */
     .buttons-container button {
-        font-size: 0.2rem;
+        font-size: 0.6rem; /* Aumenta la dimensione del testo per una migliore interazione su dispositivi mobili */
+        margin: 5px;
     }
 }
 
