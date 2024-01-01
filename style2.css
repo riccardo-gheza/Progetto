@@ -86,6 +86,22 @@ body {
     border-right: 1px solid #171b26;
 }
 
+.controls_2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #293447;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.controls_2 i {
+    font-size: 1.5rem;
+    color: #b8c6dc;
+    cursor: pointer;
+}
+
+
 @media screen and (max-width: 768px) {
     .wrapper {
         width: auto;

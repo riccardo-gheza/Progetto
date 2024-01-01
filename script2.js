@@ -39,21 +39,29 @@ resetHighScoreButton.addEventListener("click", () => {              /* L'aggiunt
 
 
 // Cambio la velocità n base alla freccia premuta
-const changeDirection = e => {
-    if (e.key === "ArrowUp" && velocityY != 1) {
+const changeDirection = (direction) => {
+    if (direction === "ArrowUp" && velocityY != 1) {
         velocityX = 0;
         velocityY = -1;
-    } else if (e.key === "ArrowDown" && velocityY != -1) {
+    } else if (direction === "ArrowDown" && velocityY != -1) {
         velocityX = 0;
         velocityY = 1;
-    } else if (e.key === "ArrowLeft" && velocityX != 1) {
+    } else if (direction === "ArrowLeft" && velocityX != 1) {
         velocityX = -1;
         velocityY = 0;
-    } else if (e.key === "ArrowRight" && velocityX != -1) {
+    } else if (direction === "ArrowRight" && velocityX != -1) {
         velocityX = 1;
         velocityY = 0;
     }
-}
+};
+
+// Aggiungi gli eventi click per i tasti direzionali
+document.querySelectorAll(".controls_2 i").forEach(button => {
+    button.addEventListener("click", () => {
+        const direction = button.dataset.key;
+        changeDirection(direction);
+    });
+});
 
 // Cambio direzione ad ogni click di una freccia
 controls.forEach(button => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
