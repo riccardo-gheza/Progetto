@@ -90,7 +90,6 @@ body {
     .wrapper {
         width: auto;
         height: auto; 
-        overflow: auto;
     }
 
     .game-details {
@@ -108,16 +107,6 @@ body {
         font-size: 1rem;
         width: 50%; /* Imposta la larghezza al 50% per adattarsi su schermi più piccoli */
         border-bottom: 1px solid #171b26; /* Aggiunge una linea inferiore tra i controlli */
-    }
-
-    /* Riduci la dimensione della griglia di gioco per adattarsi a schermi più piccoli */
-    .play-board {
-        grid-template: repeat(15, 1fr) / repeat(15, 1fr);
-    }
-
-    /* Riduci le dimensioni dei bottoni */
-    .buttons-container button {
-        font-size: 0.8rem;
     }
 }
 
@@ -138,4 +127,5 @@ button {
 button:focus {
     background: silver;
 }
+
 
