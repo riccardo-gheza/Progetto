@@ -56,7 +56,7 @@ const changeDirection = (direction) => {
 };
 
 // Aggiungi gli eventi click per i tasti direzionali
-document.querySelectorAll(".controls_2 i").forEach(button => {
+document.querySelectorAll(".controls i").forEach(button => {
     button.addEventListener("click", () => {
         const direction = button.dataset.key;
         changeDirection(direction);
