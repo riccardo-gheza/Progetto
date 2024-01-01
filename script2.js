@@ -55,6 +55,47 @@ const changeDirection = e => {
     }
 }
 
+const touchArea = document.getElementById("touch-area");
+
+let touchStartX, touchStartY;
+
+touchArea.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+});
+
+touchArea.addEventListener("touchmove", (e) => {
+  const touchEndX = e.touches[0].clientX;
+  const touchEndY = e.touches[0].clientY;
+
+  const deltaX = touchEndX - touchStartX;
+  const deltaY = touchEndY - touchStartY;
+
+  // Determina la direzione del movimento
+  if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    // Movimento orizzontale
+    if (deltaX > 0 && velocityX !== -1) {
+      velocityX = 1;
+      velocityY = 0;
+    } else if (deltaX < 0 && velocityX !== 1) {
+      velocityX = -1;
+      velocityY = 0;
+    }
+  } else {
+    // Movimento verticale
+    if (deltaY > 0 && velocityY !== -1) {
+      velocityX = 0;
+      velocityY = 1;
+    } else if (deltaY < 0 && velocityY !== 1) {
+      velocityX = 0;
+      velocityY = -1;
+    }
+  }
+
+  // Aggiorna le coordinate di inizio
+  touchStartX = touchEndX;
+  touchStartY = touchEndY;
+});
 // Cambio direzione ad ogni click di una freccia
 
 controls.forEach(button => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
@@ -132,3 +173,8 @@ function saveScoreToServer(score, highScore) {
     // Invio la richiesta
     xhr.send(JSON.stringify(data));
 }
+
+
+
+
+
