@@ -117,6 +117,18 @@ body {
         min-height: 200px; /* Imposta l'altezza automatica */
     }
 
+    .play-board .head {
+        background: #60cbff;
+        width: 20px;  /* Adjust the width */
+        height: 20px; /* Adjust the height */
+    }
+
+    .play-board .food {
+        background: #ff003d;
+        width: 20px;  /* Adjust the width */
+        height: 20px; /* Adjust the height */
+    }
+    
     .buttons-container button {
         font-size: 0.6rem; /* Aumenta la dimensione del testo per una migliore interazione su dispositivi mobili */
         margin: 2px;
