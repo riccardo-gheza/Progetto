@@ -37,6 +37,19 @@ resetHighScoreButton.addEventListener("click", () => {              /* L'aggiunt
     highScoreElement.innerText = "High Score: 0";
 });
 
+document.addEventListener("keydown", (event) => {
+    const direction = event.key;
+    changeDirection(direction);
+});
+
+// Rimuovi il listener degli eventi click per i tasti direzionali
+document.querySelectorAll(".controls i").forEach(button => {
+    button.removeEventListener("click", () => {
+        const direction = button.dataset.key;
+        changeDirection(direction);
+    });
+});
+
 
 // Cambio la velocità n base alla freccia premuta
 const changeDirection = (direction) => {
@@ -105,6 +118,16 @@ const initGame = () => {
         }
     }
     playBoard.innerHTML = html;
+
+    updateSpeed();
+}
+
+// Aggiungi questa funzione per controllare e aggiornare la velocità in base alla larghezza dello schermo
+const updateSpeed = () => {
+    const screenWidth = window.innerWidth;
+    const newInterval = screenWidth < 600 ? 200 : 80; // Modifica l'intervallo in base alla larghezza dello schermo
+    clearInterval(setIntervalId);
+    setIntervalId = setInterval(initGame, newInterval);
 }
 
 updateFoodPosition();

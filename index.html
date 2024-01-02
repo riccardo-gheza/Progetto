@@ -50,6 +50,7 @@
             margin: 0 auto; 
            
         }
+
         .game-option:nth-child(2) img {
             max-width: 100%; 
             max-height: 100%; 
@@ -83,16 +84,17 @@
             font-weight: bold;
         }
 
-        .spostato{
-            margin-left: 200px;
+        #testo {
+            margin-left: 100px;
         }
 
-        @media only screen and (max-width: 600px) {
-            h1 {
-        font-size: 24px; /* Modifica la dimensione del testo per adattarla meglio su schermi più piccoli */
-            }
 
-            .game-container {
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 24px; /* Modifica la dimensione del testo per adattarla meglio su schermi più piccoli */
+    }
+
+    .game-container {
         margin-top: 20px; /* Modifica la distanza superiore per adattarla meglio su schermi più piccoli */
     }
 
@@ -100,13 +102,17 @@
         padding: 10px; /* Modifica il padding per adattarla meglio su schermi più piccoli */
     }
 
-    p, .spostato {
+    #testo {
+        text-align: center;
+    }
+
+    p, #testo {
         margin-top: 20px; /* Modifica la distanza superiore per adattarla meglio su schermi più piccoli */
         margin-bottom: -50px; /* Modifica la distanza inferiore per adattarla meglio su schermi più piccoli */
         font-size: 14px; /* Modifica la dimensione del testo per adattarla meglio su schermi più piccoli */
         font-weight: bold;
     }
-        }
+}
     </style>
 </head>
 <body>
@@ -123,8 +129,9 @@
   <script type="module" src="script.js"></script>
 </body>
 
-<p>Sito sviluppato da Riccardo Gheza come progetto per l'esame orale del corso di Programmazione Web e Mobile<br><span class ="spostato"> a cura del Professor Paolo Ceravolo - 
-    Università degli Studi di Milano</span></p>
+<p>Sito sviluppato da Riccardo Gheza come progetto per l'esame orale <br><span id="testo">del corso di Programmazione Web e Mobile</span> 
+    <br>a cura del Professor Paolo Ceravolo - Università degli Studi di Milano
+</p>
 </html>
 
 
