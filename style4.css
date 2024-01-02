@@ -29,20 +29,20 @@ button:focus {
     background: silver;
 }
 
-#reset-high-score{
+#reset-high-score {
     margin-right: 2px;
     margin-bottom: 100px;
     vertical-align: middle;
 }
 
-#menu-principale{
-    margin-left: 20px;
-    margin-top: -150px;
+#menu-principale {
+    margin-left: 25px;
+    margin-top: -90px;
     vertical-align: middle;
 }
 
 #regole4 {
-    margin-top: -100px;
+    margin-top: -150px;
     margin-left: 25px;
     vertical-align: middle;
 }

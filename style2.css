@@ -95,42 +95,41 @@ body {
     }
 
     .game-details {
-        font-size: 1rem; /* Modifica la dimensione del testo per una migliore leggibilità */
+        font-size: 1rem; 
         padding: 10px;
     }
 
     .controls {
-        flex-direction: row; /* Cambia la direzione del flessione per una visualizzazione migliore su dispositivi mobili */
-        align-items: center; /* Centra i controlli */
+        flex-direction: row; 
+        align-items: center; 
     }
 
     .controls i {
         padding: 10px;
-        font-size: 1.5rem; /* Aumenta la dimensione del testo per una migliore interazione su dispositivi mobili */
-        width: auto; /* Imposta la larghezza automatica per adattarsi al contenuto */
+        font-size: 1.5rem; 
+        width: auto; 
         border-bottom: 1px solid #171b26;
     }
 
-    /* Aggiungi una regola per la griglia di gioco su dispositivi mobili */
     .play-board {
-        grid-template: repeat(5, 1fr) / repeat(5, 1fr); /* Riduci il numero di celle sulla griglia */
-        min-height: 200px; /* Imposta l'altezza automatica */
+        grid-template: repeat(5, 1fr) / repeat(5, 1fr); 
+        min-height: 200px; 
     }
 
     .play-board .head {
         background: #60cbff;
-        width: 20px;  /* Adjust the width */
-        height: 20px; /* Adjust the height */
+        width: 20px;  
+        height: 20px; 
     }
 
     .play-board .food {
         background: #ff003d;
-        width: 20px;  /* Adjust the width */
-        height: 20px; /* Adjust the height */
+        width: 20px;  
+        height: 20px; 
     }
     
     .buttons-container button {
-        font-size: 0.6rem; /* Aumenta la dimensione del testo per una migliore interazione su dispositivi mobili */
+        font-size: 0.6rem; 
         margin: 2px;
     }
 }
@@ -152,4 +151,3 @@ button {
 button:focus {
     background: silver;
 }
-

@@ -1,21 +1,21 @@
-body{
+body {
     background: lightblue;
     color: blue;
     font-family: serif;
     text-align: center;
 }
 
-h1{
+h1 {
     font-size: 2rem;
 }
 
-#container{
+#container {
     margin: 5% auto;
     border-radius: 5px;
     text-align: center;
 }
 
-.box{
+.box {
     display: inline-block;
     border: 1px solid blue;
     width: 100px;
@@ -25,7 +25,7 @@ h1{
     padding: 0;
 }
 
-span{
+span {
     position: absolute;
     font-size: 75px;
     font-family: sans-serif;
@@ -37,23 +37,23 @@ span{
     margin-left: -35px;
 }
 
-.top{
+.top {
     border-top: none;
 }
 
-.bottom{
+.bottom {
     border-bottom: none;
 }
 
-.left{
+.left {
     border-left: none;
 }
 
-.right{
+.right {
     border-right: none;
 }
 
-.alert{
+.alert {
     height: 75px;
     width: 125px;
     display: inline-block;
@@ -82,11 +82,11 @@ button {
     color: black;
 }
 
-button:focus{
+button:focus {
     background: silver;
 }
 
-.activeBox{
+.activeBox {
     background: silver;
 }
 
@@ -132,5 +132,3 @@ button:focus{
 .close:hover {
     color: black;
 }
-
-

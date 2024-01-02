@@ -4,9 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let board = [];
     let currentScore = 0;
     const currentScoreElem = document.getElementById('current-score');
-
     let touchStartX, touchStartY, touchEndX, touchEndY;
-    const minSwipeDistance = 50; // Minimum distance for a swipe gesture
+    const minSwipeDistance = 50; 
 
     document.addEventListener('touchstart', (e) => {
         touchStartX = e.touches[0].clientX;
@@ -21,14 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const deltaY = touchEndY - touchStartY;
 
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            // Horizontal swipe
             if (deltaX > minSwipeDistance) {
                 move('ArrowRight');
             } else if (deltaX < -minSwipeDistance) {
                 move('ArrowLeft');
             }
         } else {
-            // Vertical swipe
             if (deltaY > minSwipeDistance) {
                 move('ArrowDown');
             } else if (deltaY < -minSwipeDistance) {
@@ -36,12 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
     let highScore = localStorage.getItem('2048-highScore') || 0;
     const highScoreElem = document.getElementById('high-score');
     highScoreElem.textContent = highScore;
-
     const gameOverElem = document.getElementById('game-over');
-
     function updateScore(value) {
         currentScore += value;
         currentScoreElem.textContent = currentScore;
@@ -86,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        setTimeout(() => {
+    setTimeout(() => {
             const cells = document.querySelectorAll('.grid-cell');
             cells.forEach(cell => {
                 cell.classList.remove('merged-tile', 'new-tile');
@@ -182,9 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const resetHighScoreButton = document.getElementById("reset-high-score");
-
     resetHighScoreButton.addEventListener('click', () => {
-        // Resetto il massimo punteggio a 0
         highScore = 0;
         highScoreElem.textContent = '0';
         localStorage.setItem('2048-highScore', highScore);
@@ -198,5 +192,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('restart-btn').addEventListener('click', restartGame);
 
     initializeGame();
-
 });

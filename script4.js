@@ -1,6 +1,5 @@
 let playerScore = 0;
 let computerScore = 0;
-
 function makeChoice(playerChoice) {
     const choices = ['sasso', 'carta', 'forbici'];
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
@@ -41,7 +40,6 @@ function updateScore(result) {
 }
 
 const resetHighScoreButton = document.getElementById("reset-high-score");
-
 resetHighScoreButton.addEventListener("click", () => {              
     // Reimposto il punteggio massimo a 0 nel localStorage
     localStorage.setItem("high-score", 0);
@@ -75,5 +73,3 @@ function saveScore(playerScore, computerScore) {
         console.error('Errore durante il salvataggio del punteggio:', error);
     });
 }
-
-

@@ -1,6 +1,5 @@
 var db;
 var request = indexedDB.open("TrisGameDatabase", 1);
-
 request.onupgradeneeded = function (event) {
     db = event.target.result;
     var objectStore = db.createObjectStore("scores", { keyPath: "id", autoIncrement: true });
@@ -20,7 +19,6 @@ request.onerror = function (event) {
 function saveScores() {
     var transaction = db.transaction(["scores"], "readwrite");
     var objectStore = transaction.objectStore("scores");
-
     var request = objectStore.add({
         player1: player1Name,
         player2: player2Name,
@@ -39,9 +37,7 @@ function saveScores() {
 function viewScores() {
     var transaction = db.transaction(["scores"], "readonly");
     var objectStore = transaction.objectStore("scores");
-    
     var request = objectStore.openCursor();
-
     request.onsuccess = function (event) {
         var cursor = event.target.result;
         if (cursor) {
@@ -57,30 +53,27 @@ function viewScores() {
     };
 }
 
-
 function viewScores() {
     var modal = document.getElementById("modal");
     var modalContent = document.getElementById("modal-content");
 
-    // Pulisci il contenuto della finestra modale
+    // Pulisco il contenuto della finestra modale
     while (modalContent.firstChild) {
         modalContent.removeChild(modalContent.firstChild);
     }
 
     var transaction = db.transaction(["scores"], "readonly");
     var objectStore = transaction.objectStore("scores");
-
-    var request = objectStore.openCursor(null, 'prev');  // 'prev' imposta l'ordine in modo decrescente
-
+    var request = objectStore.openCursor(null, 'prev');  
     request.onsuccess = function (event) {
         var cursor = event.target.result;
         if (cursor) {
-            // Mostra solo l'ultima partita
+            // Mostro solo l'ultima partita
             var scoreInfo = document.createElement("p");
             scoreInfo.innerText = "Giocatore 1: " + cursor.value.player1 + ", Giocatore 2: " + cursor.value.player2 + ", Punteggio: " + cursor.value.score;
             modalContent.appendChild(scoreInfo);
-            modal.style.display = "block"; // Mostra la finestra modale
-            return;  // Esci dalla funzione dopo aver visualizzato l'ultima partita
+            modal.style.display = "block"; 
+            return;  
         } else {
             console.log("Nessun punteggio nel database.");
         }
@@ -91,21 +84,14 @@ function viewScores() {
     };
 }
 
-
 function closeModal() {
     var modal = document.getElementById("modal");
     var modalContent = document.getElementById("modal-content");
-
-    // Pulisci il contenuto della finestra modale
     while (modalContent.firstChild) {
         modalContent.removeChild(modalContent.firstChild);
     }
-
-    // Chiudi la finestra modale
     modal.style.display = "none";
 }
-
-
 
 var playerTurn, moves, isGameOver, span, restartButton;
 playerTurn = "x";
@@ -150,7 +136,6 @@ function play(y) {
     }
 
     /* Tipi di vittorie */
-
     checkWinner(1, 2, 3);
     checkWinner(4, 5, 6);
     checkWinner(7, 8, 9);
@@ -161,7 +146,6 @@ function play(y) {
     checkWinner(3, 5, 7);
 
     /* No vincitori */
-
     if (moves == 9 && isGameOver == false) { draw(); }
 
 }
@@ -221,7 +205,6 @@ function gameOver(a) {
     saveScores();
 }
 
-
 function draw() {
     var drawAlertElement = '<b>PAREGGIO</b><br><br>' + restartButton;
     var div = document.createElement("div");
@@ -233,8 +216,7 @@ function draw() {
 }
 
 const resetHighScoreButton = document.getElementById("reset-high-score");
-
-resetHighScoreButton.addEventListener("click", () => {              /* L'aggiunta di un listener agli eventi è parte dell'API degli eventi di HTML5. In questo caso, si tratta di un evento di click */
+resetHighScoreButton.addEventListener("click", () => {  /* L'aggiunta di un listener agli eventi è parte dell'API degli eventi di HTML5. In questo caso, si tratta di un evento di click */
     // Reimposto il punteggio massimo a 0 nel localStorage
     localStorage.setItem("high-score", 0);
     

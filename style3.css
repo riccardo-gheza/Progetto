@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-body{
+body {
     background-color: lightblue;
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -11,20 +11,20 @@ body{
     height: 100vh;
 }
 
-.game-container{
+.game-container {
    width: 320px;
    height: 320px;
    border: 1px solid #ccc;
    overflow: hidden;
 }
 
-.grid{
+.grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
 }
 
-.cell{
+.cell {
     width: 77px;
     height: 77px;
     background-color: #f4f4f4;
@@ -35,62 +35,62 @@ body{
     color: #000;
 }
 
-.score-container{
+.score-container {
     width: 320px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
 }
 
-.cell[data-value="2"]{
+.cell[data-value="2"] {
     background-color: #ffc0cb;
 }
 
-.cell[data-value="4"]{
+.cell[data-value="4"] {
     background-color: #add8e6;
 }
 
-.cell[data-value="8"]{
+.cell[data-value="8"] {
     background-color: #98fb98;
 }
 
-.cell[data-value="16"]{
+.cell[data-value="16"] {
     background-color: #ffd700;
 }
 
-.cell[data-value="32"]{
+.cell[data-value="32"] {
     background-color: #ffa07a;
 }
 
-.cell[data-value="64"]{
+.cell[data-value="64"] {
     background-color: #87ceeb;
 }
 
-.cell[data-value="128"]{
+.cell[data-value="128"] {
     background-color: #ffff00;
 }
 
-.cell[data-value="256"]{
+.cell[data-value="256"] {
     background-color: #40e0d0;
 }
 
-.cell[data-value="512"]{
+.cell[data-value="512"] {
     background-color: #ff69b4;
 }
 
-.cell[data-value="1024"]{
+.cell[data-value="1024"] {
     background-color: #7b68ee;
 }
 
-.cell[data-value="2048"]{
+.cell[data-value="2048"] {
     background-color: #ff6347;
 }
 
-.cell[data-value="4096"]{
+.cell[data-value="4096"] {
     background-color: #a9a9a9;
 }
 
-#restart-btn{
+#restart-btn {
     margin-top: 15px;
     padding: 10px 15px;
     background-color: #f4f4f4;
@@ -99,7 +99,7 @@ body{
     transition: all 0.3s ease;
 }
 
-#game-over{
+#game-over {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -113,11 +113,11 @@ body{
     justify-content: center;
 }
 
-.grid-cell[data-value]{
+.grid-cell[data-value] {
     transition: transform 0.2s, background-color 0.2s;
 }
 
-.new-tile{
+.new-tile {
     animation: appear 0.3s;
 }
 
@@ -131,23 +131,23 @@ button {
     color: black;
 }
 
-button:focus{
+button:focus {
     background: silver;
 }
 
-#menu-principale{
+#menu-principale {
     position: relative;
-    top: 80px;
+    top: 20px;
 }
 
-#reset-high-score{
+#reset-high-score {
     position: relative;
     top: 425px;
 }
 
-#regole3{
+#regole3 {
     position: relative;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 @keyframes appear {

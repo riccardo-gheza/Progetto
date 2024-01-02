@@ -2,7 +2,6 @@ const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 const controls = document.querySelectorAll(".controls i");
-
 let gameOver = false;
 let foodX, foodY;
 let snakeX = 5, snakeY = 5;
@@ -12,10 +11,8 @@ let setIntervalId;
 let score = 0;
 
 // Recupero il punteggio massimno dal local storage
-
 let highScore = localStorage.getItem("high-score") || 0; /* API HTML5 (API WEB STORAGE DI HTML5) */
 highScoreElement.innerText = `High Score: ${highScore}`;
-
 const updateFoodPosition = () => {
     foodX = Math.floor(Math.random() * 30) + 1;
     foodY = Math.floor(Math.random() * 30) + 1;
@@ -28,8 +25,7 @@ const handleGameOver = () => {
 }
 
 const resetHighScoreButton = document.getElementById("reset-high-score");
-
-resetHighScoreButton.addEventListener("click", () => {              /* L'aggiunta di un listener agli eventi è parte dell'API degli eventi di HTML5. In questo caso, si tratta di un evento di click */
+resetHighScoreButton.addEventListener("click", () => {  /* L'aggiunta di un listener agli eventi è parte dell'API degli eventi di HTML5. In questo caso, si tratta di un evento di click */
     // Reimposto il punteggio massimo a 0 nel localStorage
     localStorage.setItem("high-score", 0);
     
@@ -42,14 +38,13 @@ document.addEventListener("keydown", (event) => {
     changeDirection(direction);
 });
 
-// Rimuovi il listener degli eventi click per i tasti direzionali
+// Rimuovo il listener degli eventi click per i tasti direzionali
 document.querySelectorAll(".controls i").forEach(button => {
     button.removeEventListener("click", () => {
         const direction = button.dataset.key;
         changeDirection(direction);
     });
 });
-
 
 // Cambio la velocità n base alla freccia premuta
 const changeDirection = (direction) => {
@@ -68,7 +63,7 @@ const changeDirection = (direction) => {
     }
 };
 
-// Aggiungi gli eventi click per i tasti direzionali
+// Aggiungo gli eventi click per i tasti direzionali
 document.querySelectorAll(".controls i").forEach(button => {
     button.addEventListener("click", () => {
         const direction = button.dataset.key;
@@ -78,7 +73,6 @@ document.querySelectorAll(".controls i").forEach(button => {
 
 // Cambio direzione ad ogni click di una freccia
 controls.forEach(button => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
-
 const initGame = () => {
     if (gameOver) return handleGameOver();
     let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
@@ -122,17 +116,17 @@ const initGame = () => {
     updateSpeed();
 }
 
-// Aggiungi questa funzione per controllare e aggiornare la velocità in base alla larghezza dello schermo
+// Aggiungo la funzione per controllare e aggiornare la velocità in base alla larghezza dello schermo
 const updateSpeed = () => {
     const screenWidth = window.innerWidth;
-    const newInterval = screenWidth < 600 ? 200 : 80; // Modifica l'intervallo in base alla larghezza dello schermo
+    const newInterval = screenWidth < 600 ? 200 : 80; // Modifico l'intervallo in base alla larghezza dello schermo
     clearInterval(setIntervalId);
     setIntervalId = setInterval(initGame, newInterval);
 }
 
 updateFoodPosition();
 setIntervalId = setInterval(initGame, 100); /* setInterval è parte dell'API di temporizzazione di HTML5 e viene utilizzato per eseguire la funzione initGame a intervalli regolari */
-document.addEventListener("keyup", changeDirection); /* La registrazione degli eventi della tastiera tramite addEventListener è parte dell'API degli eventi di HTML5. In questo caso, l'evento "keyup" è utilizzato per gestire il cambiamento della direzione del serpente */
+document.addEventListener("keyup", changeDirection); 
 
 function saveScoreToServer(score, highScore) {    
     var xhr = new XMLHttpRequest();
@@ -162,8 +156,3 @@ function saveScoreToServer(score, highScore) {
     // Invio la richiesta
     xhr.send(JSON.stringify(data));
 }
-
-
-
-
-

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MENU' PRINCIPALE</title>
-    <style>
+<style>
         body {
             font-family: Arial, sans-serif;
             background-color: lightblue;
@@ -80,43 +80,43 @@
             background-color: lightblue;
         }
 
-        p{
+        p {
             font-weight: bold;
-            margin-top: 10px; /* Aggiusta il margine superiore per adattarsi meglio su schermi più piccoli */
-            margin-bottom: 10px; /* Aggiusta il margine inferiore per adattarsi meglio su schermi più piccoli */
+            margin-top: 10px; 
+            margin-bottom: 10px; 
         }
 
 @media only screen and (max-width: 600px) {
     h1 {
-        font-size: 24px; /* Modifica la dimensione del testo per adattarla meglio su schermi più piccoli */
+        font-size: 24px; 
     }
 
     .game-container {
-        margin-top: 20px; /* Modifica la distanza superiore per adattarla meglio su schermi più piccoli */
+        margin-top: 20px; 
     }
 
     .game-option {
-        padding: 10px; /* Modifica il padding per adattarla meglio su schermi più piccoli */
+        padding: 10px; 
     }
 
     #testo {
         text-align: center;
-        margin-top: 10px; /* Aggiusta il margine superiore per adattarsi meglio su schermi più piccoli */
-        margin-bottom: 10px; /* Aggiusta il margine inferiore per adattarsi meglio su schermi più piccoli */
+        margin-top: 10px; 
+        margin-bottom: 10px; 
     }
 
     p, #testo {
-        margin-top: 10px; /* Aggiusta il margine superiore per adattarsi meglio su schermi più piccoli */
-        margin-bottom: 10px; /* Aggiusta il margine inferiore per adattarsi meglio su schermi più piccoli */
+        margin-top: 10px; 
+        margin-bottom: 10px; 
         font-size: 14px;
         font-weight: bold;
     }
 }
-    </style>
+</style>
 </head>
+
 <body>
     <h1>BENVENUTO, QUALE GIOCO VUOI PROVARE?</h1>
-    
     <div class="game-container">
         <div class="game-option" onclick="startGame('tris')"><a href="index1.html"><img src="Tris.webp" alt="Gioco del Tris"></a></div>
         <div class="game-option" onclick="startGame('2048')"><a href="index3.html"><img src="2048.png" alt="Gioco carta-forice-sasso"></a></div>
@@ -126,12 +126,9 @@
     <div id="app"></div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   <script type="module" src="script.js"></script>
-</body>
-
-<p>Sito sviluppato da Riccardo Gheza come progetto per l'esame orale <br><span id="testo">del corso di Programmazione Web e Mobile</span> 
+  <p>
+    Sito sviluppato da Riccardo Gheza come progetto per l'esame orale <br><span id="testo">del corso di Programmazione Web e Mobile</span> 
     <br>a cura del Professor Paolo Ceravolo - Università degli Studi di Milano
-</p>
+  </p>
+</body>
 </html>
-
-
-
