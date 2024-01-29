@@ -16,7 +16,7 @@ h1 {
 }
 
 .box {
-    display: inline-block;
+    display: inline-block;  
     border: 1px solid blue;
     width: 100px;
     height: 100px;
@@ -38,7 +38,7 @@ span {
 }
 
 .top {
-    border-top: none;
+    border-top: none;   /* rimuovo il bordo superiore */
 }
 
 .bottom {
@@ -59,12 +59,12 @@ span {
     display: inline-block;
     background: ghostwhite;
     position: relative;
-    z-index: 10;
+    z-index: 10;    /* l'element con valore maggiore viene posizionato sopra quello minore */
     margin-top: -50%;
     border-radius: 20px;
     box-shadow: 0 0 75px 2px dimgray;
     animation: larger 0.5s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;  /* l'elemento mantiene lo stat finale dopo l'animazione */
     box-sizing: content-box;
     padding: 30px;
     bottom: 50px;
@@ -90,7 +90,7 @@ button:focus {
     background: silver;
 }
 
-@keyframes larger{
+@keyframes larger{  /* animazione che cambia nel tempo chiamata larger */
     from{
         height: 75px;
         width: 125px;
